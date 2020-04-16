@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="3388" started-at="2020-04-16T16:35:33Z" finished-at="2020-04-16T16:35:36Z">
+    <groups>
+    </groups>
+    <test name="TestNG Test" duration-ms="3388" started-at="2020-04-16T16:35:33Z" finished-at="2020-04-16T16:35:36Z">
+      <class name="testCases.TC_1_GetAllUsers">
+        <test-method status="PASS" signature="test_CreateUser()[pri:1, instance:testCases.TC_1_GetAllUsers@442675e1]" name="test_CreateUser" duration-ms="3150" started-at="2020-04-16T16:35:33Z" finished-at="2020-04-16T16:35:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_CreateUser -->
+        <test-method status="PASS" signature="test_getNewlyCreatedUser()[pri:2, instance:testCases.TC_1_GetAllUsers@442675e1]" name="test_getNewlyCreatedUser" duration-ms="112" started-at="2020-04-16T16:35:36Z" finished-at="2020-04-16T16:35:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_getNewlyCreatedUser -->
+        <test-method status="PASS" signature="test_getAllUsers_Page1()[pri:3, instance:testCases.TC_1_GetAllUsers@442675e1]" name="test_getAllUsers_Page1" duration-ms="81" started-at="2020-04-16T16:35:36Z" finished-at="2020-04-16T16:35:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_getAllUsers_Page1 -->
+      </class> <!-- testCases.TC_1_GetAllUsers -->
+    </test> <!-- TestNG Test -->
+  </suite> <!-- Suite -->
+</testng-results>
