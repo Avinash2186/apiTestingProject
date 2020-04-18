@@ -4,6 +4,7 @@
   <test thread-count="2" name="TestNG Test">
     <classes>
       <class name="testCases.TC_1_GetAllUsers"/>
+      <class name="testCases.TC_2_GetAllUsers2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
