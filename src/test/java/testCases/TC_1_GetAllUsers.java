@@ -44,7 +44,7 @@ public class TC_1_GetAllUsers {
 	
 	@Test(priority = 2)
 		public void test_getNewlyCreatedUser() {
-		System.out.println("STARTED 2nd TEST CASE***********************");
+		System.out.println("STARTED 2nd TEST CASE updated***********************");
 			given()
 			.when().get("https://reqres.in/api/users/"+userId)
 			.then().statusCode(200)
