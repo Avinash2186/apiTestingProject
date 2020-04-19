@@ -3,6 +3,8 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
@@ -10,28 +12,25 @@ import static io.restassured.RestAssured.*;
 
 import java.util.HashMap;
 
-public class TC_2_GetAllUsers2 {
+public class TC_3_VerifyHeaders {
 	String userId = "6";
 	
 	
-	@Test(priority = 3)
-	public void test_getAllUsers_Page1() {
+	@Test(priority = 1)
+	public void test_Headers() {
 		Response response = given()
 		.when().
 		get("https://reqres.in/api/users");
 		
 		System.out.println("response :::: "+response);
 		
-		ResponseBody body = response.getBody();
+		Headers headers = response.headers();
 		
-		System.out.println("body ::::: "+body);
+		for (Header header : headers) {
+			System.out.println("header name :: "+header.getName() +" -- -- header value :: "+header.getValue());
+		}
 		
-		System.out.println("body as string ::::: "+body.asString());
-		
-		System.out.println("response jsonpath:::"+response.jsonPath().get("per_page"));
-		
-		System.out.println("response Headers :::: "+response.getHeaders());
-		System.out.println("Content type :::: "+response.getHeader("Content-Type"));
+		Assert.assertEquals(response.getHeader("Content-Type"), "application/json; charset=utf-8");
 		
 	}
 	 
