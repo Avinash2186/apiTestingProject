@@ -5,6 +5,10 @@
     <classes>
       <class name="testCases.TC_1_GetAllUsers"/>
       <class name="testCases.TC_2_GetAllUsers2"/>
+      <class name="testCases.TC_3_VerifyHeaders"/>
+      <class name="testCases.TC_4_TestAuthentication"/>
+      <class name="testCases.TC_5_ValidateBodyList"/>
+            
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
