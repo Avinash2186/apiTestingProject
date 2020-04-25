@@ -3,6 +3,7 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import allClassesFiles.UsersInfo;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
@@ -32,12 +33,18 @@ public class TC_5_ValidateBodyList {
 				
 				JsonPath jsonPathEvaluator = response.jsonPath();
 				
-				List<String> allBooks = jsonPathEvaluator.getList("data.email");
-				System.out.println("allbooks size::::::;"+allBooks.size());
+				List<UsersInfo> users = jsonPathEvaluator.getList("data",UsersInfo.class);
+				System.out.println("users size::::::;"+users.size());
 				// Iterate over the list and print individual book item
-				for(String book : allBooks)
+				for(UsersInfo user : users)
 				{
-					System.out.println("Book: " + book);
+					System.out.println("User id : " + user.getId() + " "+"User email : " + user.getEmail());
+					System.out.println();
+					if(user.getId().equalsIgnoreCase("2"))
+						Assert.assertTrue(user.getEmail().contains("janet"));
+					else 
+						System.out.println("Other than Janet.....");
+						
 				}
 			}			
 }
