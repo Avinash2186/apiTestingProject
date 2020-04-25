@@ -20,7 +20,7 @@ import java.util.List;
 
 public class TC_6_VerifySlowResponse {
 		@Test()
-		public void test_singleUser() {
+		public void test_slowResponse() {
 			Response response = given()
 			.when().
 			get("https://reqres.in/api/users?delay=3");
