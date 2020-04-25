@@ -8,12 +8,11 @@
   <test thread-count="2" name="TestNG Test from testng xml file having all classes">
     <classes>
       <class name="testCases.TC_1_GetAllUsers"/>
-      <class name="testCases.TC_2_VerifySingleUser_DD"/>
       <class name="testCases.TC_3_VerifyHeaders"/>
       <class name="testCases.TC_4_TestAuthentication"/>
       <class name="testCases.TC_5_ValidateBodyList"/>
       <class name="testCases.TC_6_VerifySlowResponse"/>
-         
+      <class name="testCases.TC_2_VerifySingleUser_DD"/>   
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
