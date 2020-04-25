@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite from testng XML file">
+<suite name="Suite Name from DD User xml">
 <listeners>
 <listener class-name="utilities.Listener"></listener>
 </listeners>
-
-  <test thread-count="2" name="TestNG Test from testng xml file having all classes">
+  <test thread-count="3" name="Test Name from XML Check Slow response">
     <classes>
-      <class name="testCases.TC_1_GetAllUsers"/>
-      <class name="testCases.TC_2_VerifySingleUser_DD"/>
-      <class name="testCases.TC_3_VerifyHeaders"/>
-      <class name="testCases.TC_4_TestAuthentication"/>
+    <class name="testCases.TC_4_TestAuthentication"/>
       <class name="testCases.TC_5_ValidateBodyList"/>
       <class name="testCases.TC_6_VerifySlowResponse"/>
-         
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
