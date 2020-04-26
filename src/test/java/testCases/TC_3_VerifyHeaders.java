@@ -7,12 +7,13 @@ import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
+import utilities.BaseClass;
 
 import static io.restassured.RestAssured.*;
 
 import java.util.HashMap;
 
-public class TC_3_VerifyHeaders {
+public class TC_3_VerifyHeaders extends BaseClass{
 	String userId = "6";
 	
 	
@@ -29,7 +30,7 @@ public class TC_3_VerifyHeaders {
 		for (Header header : headers) {
 			System.out.println("header name :: "+header.getName() +" -- -- header value :: "+header.getValue());
 		}
-		
+		logger.info("Headers Validated......");
 		Assert.assertEquals(response.getHeader("Content-Type"), "application/json; charset=utf-8");
 		
 	}

@@ -9,7 +9,8 @@ import allClassesFiles.UsersInfo;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 	import io.restassured.response.ResponseBody;
-	import utilities.XLUtils;
+import utilities.BaseClass;
+import utilities.XLUtils;
 
 	import static io.restassured.RestAssured.*;
 
@@ -18,7 +19,7 @@ import io.restassured.response.Response;
 import java.util.List;
 
 
-public class TC_6_VerifySlowResponse {
+public class TC_6_VerifySlowResponse extends BaseClass{
 		@Test()
 		public void test_slowResponse() {
 			Response response = given()
@@ -32,6 +33,7 @@ public class TC_6_VerifySlowResponse {
 			 * System.out.println("email:::::::;"+email);
 			 * Assert.assertTrue(email.equalsIgnoreCase(emailId));
 			 */
+			logger.info("Verified Slow response is nt an Issue....... Taking 3 Seconds....");
 		}
 		 
 		@DataProvider(name="UserId")

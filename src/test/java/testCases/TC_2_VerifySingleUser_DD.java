@@ -9,7 +9,8 @@ import allClassesFiles.UsersInfo;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 	import io.restassured.response.ResponseBody;
-	import utilities.XLUtils;
+import utilities.BaseClass;
+import utilities.XLUtils;
 
 	import static io.restassured.RestAssured.*;
 
@@ -18,7 +19,7 @@ import io.restassured.response.Response;
 import java.util.List;
 
 
-public class TC_2_VerifySingleUser_DD {
+public class TC_2_VerifySingleUser_DD extends BaseClass{
 		@Test(dataProvider="UserId")
 		public void test_singleUser(String Key,String userId,String emailId) {
 			Response response = given()
@@ -29,7 +30,15 @@ public class TC_2_VerifySingleUser_DD {
 			JsonPath jsonPathEvaluator = response.jsonPath();	
 			String email = jsonPathEvaluator.get("data.email");
 			System.out.println("email:::::::;"+email);
-			Assert.assertTrue(email.equalsIgnoreCase(emailId));	
+			logger.info("Email Id from Response - "+email);
+			try {
+			Assert.assertTrue(email.equalsIgnoreCase(emailId));
+			logger.info("Verified Email in Response - "+email);
+			} catch (Exception e) {
+				logger.error("Failed Email id :: "+email);
+				Assert.assertTrue(false);
+			}
+			
 		}
 		 
 		@DataProvider(name="UserId")

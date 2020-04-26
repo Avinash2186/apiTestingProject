@@ -10,13 +10,14 @@ import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
+import utilities.BaseClass;
 
 import static io.restassured.RestAssured.*;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class TC_5_ValidateBodyList {
+public class TC_5_ValidateBodyList extends BaseClass{
 	String userId = "6";
 	
 	
@@ -24,7 +25,7 @@ public class TC_5_ValidateBodyList {
 	//TestPassword
 	
 	@Test(priority = 1)
-	public void test_ResponseBody() {
+	public void verify_SecondUser_EmailId() {
 		Response response = given()
 				.when().
 				get("https://reqres.in/api/users");
@@ -46,5 +47,6 @@ public class TC_5_ValidateBodyList {
 						System.out.println("Other than Janet.....");
 						
 				}
+				logger.info("Ensuring 2nd Email is of Janet........");
 			}			
 }

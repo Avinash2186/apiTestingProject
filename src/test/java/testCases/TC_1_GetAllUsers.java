@@ -4,20 +4,22 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
+import utilities.BaseClass;
 
 import static io.restassured.RestAssured.*;
 
 import java.util.HashMap;
 
-public class TC_1_GetAllUsers {
+public class TC_1_GetAllUsers extends BaseClass{
 	String userId = "6";
 	
 	@Test(priority = 3)
 	public void test_getAllUsers_Page1() {
 		given()
 		.when().get("https://reqres.in/api/users")
-		.then().statusCode(200)
-		.log().body();	
+		.then().statusCode(200);
+		logger.info("Status 200 Check OK.........");
+		//.log().body();	
 	}
 	
 	@Test (priority = 1)
@@ -39,7 +41,8 @@ public class TC_1_GetAllUsers {
 		System.out.println("=======================================/n \n ");
 		String responseBodyAsString = res.asString();
 		System.out.println("responseBodyAsString===>"+responseBodyAsString);
-		
+		//res.getStatusCode()
+		logger.info("User Created. cna Check Status Code equals 201 .......");
 	}
 	
 	@Test(priority = 2)
