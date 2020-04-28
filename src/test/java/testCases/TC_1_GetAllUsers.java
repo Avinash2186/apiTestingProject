@@ -1,8 +1,10 @@
 package testCases;
 
+import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import utilities.BaseClass;
 
@@ -35,23 +37,30 @@ public class TC_1_GetAllUsers extends BaseClass{
 		.post("https://reqres.in/api/users")
 		.then()
 		.statusCode(201)
+		.body("isEmpty()", Matchers.is(false))//.statusCode(200)
+
 		.log().body()
 		.extract().response();
 		
 		System.out.println("=======================================/n \n ");
 		String responseBodyAsString = res.asString();
-		System.out.println("responseBodyAsString===>"+responseBodyAsString);
+		//System.out.println("responseBodyAsString===>"+responseBodyAsString);
+		JsonPath path = res.jsonPath();
+		userId = path.getString("id");
 		//res.getStatusCode()
-		logger.info("User Created. cna Check Status Code equals 201 .......");
+		logger.info("User Created. cna Check Status Code equals 201.. USer Id  ......."+userId);
 	}
 	
 	@Test(priority = 2)
 		public void test_getNewlyCreatedUser() {
-		System.out.println("STARTED 2nd TEST CASE updated***********************");
+		System.out.println("STARTED 2nd TEST CASE updated**** to get newly created user*******************"+userId);
 			given()
+			.log().all()
 			.when().get("https://reqres.in/api/users/"+userId)
-			.then().statusCode(200)
-			.log().body().extract();	
+			.then()
+			.body("isEmpty()", Matchers.is(true))//.statusCode(200)
+			.log().all().extract();
+				
 		}
 
 }

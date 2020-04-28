@@ -9,6 +9,9 @@
     <class name="testCases.TC_4_TestAuthentication"/>
       <class name="testCases.TC_5_ValidateBodyList"/>
       <class name="testCases.TC_6_VerifySlowResponse"/>
+       <class name="testCases.TC_8_Verify_Books_Functionality"/>
+       <class name="testCases.TC_8_Verify_Books_Functionality"/>
+       <class name="testCases.TC_9_Verify_Books_Validations"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

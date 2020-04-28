@@ -1,10 +1,12 @@
 package utilities;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -71,18 +73,27 @@ public class XLUtils {
 	
 	public static void setCellData(String xlfile,String xlsheet,int rownum,int colnum,String data) throws IOException
 	{
-		fi=new FileInputStream(xlfile);
+		System.out.println(xlfile);
+		File src = new File(xlfile); // added Avinash
+		fi=new FileInputStream(src); // updated
 		wb=new XSSFWorkbook(fi);
+		System.out.println(xlsheet);
 		ws=wb.getSheet(xlsheet);
+		System.out.println(rownum);
 		row=ws.getRow(rownum);
-		cell=row.createCell(colnum);
+		System.out.println(colnum);
+	    int rowCount = ws.getLastRowNum()-ws.getFirstRowNum();
+		Row newRow = ws.createRow(rowCount+1);
+		cell=(XSSFCell) newRow.createCell(colnum);
+		System.out.println(data);
 		cell.setCellValue(data);
-		fo=new FileOutputStream(xlfile);
+		//fi.close();
+		fo=new FileOutputStream(src);
 		wb.write(fo);		
 		wb.close();
-		fi.close();
-		fo.close();
-	}
+		/*
+		 * fi.close(); fo.close();
+		 */	}
 	
 	
 }
