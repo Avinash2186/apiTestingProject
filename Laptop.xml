@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Name from DD User xml">
+<listeners>
+<listener class-name="utilities.Listener"></listener>
+</listeners>
+  <test name="Test Name from XML FOR LAPTOP">
+<packages>
+	<package name="testCasesLaptop"></package>
+	<package name="laptopSecureTestcases"></package>
+	<!-- <package name="testCases"></package> -->
+	<!-- <package name="booksTestCases"></package> -->
+</packages>  
+
+</test> <!-- Test -->
+</suite> <!-- Suite -->

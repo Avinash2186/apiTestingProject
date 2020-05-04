@@ -20,7 +20,7 @@ import java.util.List;
 
 
 public class TC_2_VerifySingleUser_DD extends BaseClass{
-		@Test(dataProvider="UserId")
+		//@Test(dataProvider="UserId")
 		public void test_singleUser(String Key,String userId,String emailId) {
 			Response response = given()
 			.when().

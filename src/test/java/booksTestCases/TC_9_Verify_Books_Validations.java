@@ -1,4 +1,4 @@
-package testCases;
+package booksTestCases;
 
 import org.hamcrest.Matchers;
 import org.testng.Assert;

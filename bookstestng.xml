@@ -6,8 +6,8 @@
 </listeners>
   <test thread-count="5" name="BooksTest_FromXML" preserve-order="true">
     <classes>
-      <class name="testCases.TC_8_Verify_Books_Functionality"/>
-       <class name="testCases.TC_9_Verify_Books_Validations"/>	 
+      <class name="booksTestCases.TC_8_Verify_Books_Functionality"/>
+       <class name="booksTestCases.TC_9_Verify_Books_Validations"/>	 
     </classes>
   </test> <!-- BooksTest_FromXML -->
 </suite> <!-- BooksSuite_FromXML -->
