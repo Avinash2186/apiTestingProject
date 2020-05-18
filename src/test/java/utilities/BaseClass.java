@@ -10,14 +10,16 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseClass {
-	public static Logger logger;
+	//public static Logger logger;
 
 	
 	@BeforeClass
 	public static void setUp() {
 		System.out.println("BEFORE CLASS....setup");
-		  logger = Logger.getLogger("API TESTING");
-		  PropertyConfigurator.configure("Log4j.properties");
+		/*
+		 * logger = Logger.getLogger("API TESTING");
+		 * PropertyConfigurator.configure("Log4j.properties");
+		 */
 	}
 	
 	@BeforeSuite

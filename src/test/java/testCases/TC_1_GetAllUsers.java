@@ -20,7 +20,7 @@ public class TC_1_GetAllUsers extends BaseClass{
 		given()
 		.when().get("https://reqres.in/api/users")
 		.then().statusCode(200);
-		logger.info("Status 200 Check OK.........");
+		//logger.info("Status 200 Check OK.........");
 		//.log().body();	
 	}
 	
@@ -48,7 +48,7 @@ public class TC_1_GetAllUsers extends BaseClass{
 		JsonPath path = res.jsonPath();
 		userId = path.getString("id");
 		//res.getStatusCode()
-		logger.info("User Created. cna Check Status Code equals 201.. USer Id  ......."+userId);
+		//logger.info("User Created. cna Check Status Code equals 201.. USer Id  ......."+userId);
 	}
 	
 	@Test(priority = 2)

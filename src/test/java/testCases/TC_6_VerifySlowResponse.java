@@ -44,7 +44,7 @@ public class TC_6_VerifySlowResponse extends BaseClass{
 			.when().
 			get("https://reqres.in/api/users");
 			String responseAsString = response.asString();
-			logger.info("Verified Slow response is nt an Issue....... Taking 3 Seconds....");
+			//logger.info("Verified Slow response is nt an Issue....... Taking 3 Seconds....");
 			// take out only all firstNames
 			List<String> firstNames = from(responseAsString).getList("data.first_name");
 			for(String f : firstNames) {

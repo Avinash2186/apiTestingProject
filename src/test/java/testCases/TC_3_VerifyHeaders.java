@@ -30,7 +30,7 @@ public class TC_3_VerifyHeaders extends BaseClass{
 		for (Header header : headers) {
 			System.out.println("header name :: "+header.getName() +" -- -- header value :: "+header.getValue());
 		}
-		logger.info("Headers Validated......");
+		//logger.info("Headers Validated......");
 		Assert.assertEquals(response.getHeader("Content-Type"), "application/json; charset=utf-8");
 		
 	}

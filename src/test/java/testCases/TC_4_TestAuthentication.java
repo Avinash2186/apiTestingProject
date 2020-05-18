@@ -36,7 +36,7 @@ public class TC_4_TestAuthentication extends BaseClass{
 
 		Assert.assertEquals(jsonObject.get("Status"), "Invalid or expired Authentication key provided");
 		Assert.assertEquals(response.statusCode(),401);
-		logger.info("Recievered Response for Invalid Authentication 401 Checked.....");
+		//logger.info("Recievered Response for Invalid Authentication 401 Checked.....");
 	}
 	
 	@Test(priority = 2)
@@ -53,7 +53,7 @@ public class TC_4_TestAuthentication extends BaseClass{
 		System.out.println("Fault:::::" + jsonObject.get("Fault"));
 
 		Assert.assertEquals(jsonObject.get("Fault"), "Operation completed successfully");
-		logger.info("Authentication Succesfull Checked with Message - Operation Completed Successfully.....");
+		//logger.info("Authentication Succesfull Checked with Message - Operation Completed Successfully.....");
 
 	}
 	 

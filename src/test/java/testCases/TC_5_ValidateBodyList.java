@@ -47,6 +47,6 @@ public class TC_5_ValidateBodyList extends BaseClass{
 						System.out.println("Other than Janet.....");
 						
 				}
-				logger.info("Ensuring 2nd Email is of Janet........");
+				//logger.info("Ensuring 2nd Email is of Janet........");
 			}			
 }

@@ -30,12 +30,12 @@ public class TC_2_VerifySingleUser_DD extends BaseClass{
 			JsonPath jsonPathEvaluator = response.jsonPath();	
 			String email = jsonPathEvaluator.get("data.email");
 			System.out.println("email:::::::;"+email);
-			logger.info("Email Id from Response - "+email);
+			//logger.info("Email Id from Response - "+email);
 			try {
 			Assert.assertTrue(email.equalsIgnoreCase(emailId));
-			logger.info("Verified Email in Response - "+email);
+			//logger.info("Verified Email in Response - "+email);
 			} catch (Exception e) {
-				logger.error("Failed Email id :: "+email);
+				//logger.error("Failed Email id :: "+email);
 				Assert.assertTrue(false);
 			}
 			
